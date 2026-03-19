@@ -1,8 +1,8 @@
 package com.example._9.midterm.project.ticketing.service;
 
-import com.yourgroup.ticketing.dto.OrganizerDTO;
-import com.yourgroup.ticketing.entity.Organizer;
-import com.yourgroup.ticketing.repository.OrganizerRepository;
+import com.example._9.midterm.project.dto.OrganizerDTO;
+import com.example._9.midterm.project.entity.Organizer;
+import com.example._9.midterm.project.repository.OrganizerRepository;
 import com.yourgroup.ticketing.exception.BadRequestException;
 
 import lombok.RequiredArgsConstructor;

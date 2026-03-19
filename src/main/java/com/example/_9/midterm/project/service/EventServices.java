@@ -1,9 +1,9 @@
 package com.example._9.midterm.project.service;
 
-import com.example._9.midterm.EventResponseDTO;
-import com.example._9.midterm.project.ticketing.dto.TicketTypeDTO;
+import com.example._9.midterm.project.dto.EventResponseDTO;
+import com.example._9.midterm.project.dto.TicketTypeDTO;
 import com.example._9.midterm.project.entity.*;
-import com.yourgroup.ticketing.repository.*;
+import com.example._9.midterm.project.repository.*;
 import com.example._9.midterm.project.ticketing.exception.ResourceNotFoundException;
 
 import lombok.RequiredArgsConstructor;
