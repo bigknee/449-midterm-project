@@ -1,7 +1,9 @@
 package com.example._9.midterm.project.entity;
 
+import com.example._9.midterm.project.enums.PaymentStatus;
 import jakarta.persistence.*;
 import lombok.Data;
+import java.time.LocalDateTime;
 
 @Data
 @Entity

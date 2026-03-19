@@ -1,9 +1,9 @@
 package com.example._9.midterm.project.entity;
 
+import com.example._9.midterm.project.enums.EventStatus;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDateTime;
-
 
 @Data
 @Entity
@@ -19,7 +19,9 @@ public class Event {
     private String description;
     private LocalDateTime event_date;
 
-    //implement status
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private EventStatus status;
 
     @ManyToOne
     @JoinColumn(name = "organizer_id", nullable = false)
