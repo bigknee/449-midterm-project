@@ -12,7 +12,7 @@ public class EventResponseDTO {
     private String description;
     private LocalDateTime eventDate;
     private String status;
-    private Long organizerName;
-    private Long venueName;
+    private String organizerName;
+    private String venueName;
     private List<TicketTypeDTO> ticketTypes;
 }

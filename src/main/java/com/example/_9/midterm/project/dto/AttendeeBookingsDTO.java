@@ -5,6 +5,6 @@ import java.util.List;
 
 @Data
 public class AttendeeBookingsDTO {
-    private String attendee;
-    private List<BookingResponseDTO> booking_responses;
+    private String attendeeName;
+    private List<BookingResponseDTO> bookingResponses;
 }

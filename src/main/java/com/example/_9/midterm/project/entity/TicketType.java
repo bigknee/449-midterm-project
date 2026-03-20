@@ -7,15 +7,20 @@ import java.math.BigDecimal;
 
 @Data
 @Entity
-@Table(name = "ticketType")
+@Table(name = "ticket_type")
 public class TicketType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ticket_type_id;
+    private Long ticketTypeId;
 
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private BigDecimal price;
-    private Integer quantity_available;
+
+    @Column(nullable = false)
+    private Integer quantityAvailable;
 
     @ManyToOne
     @JoinColumn(name = "event_id", nullable = false)

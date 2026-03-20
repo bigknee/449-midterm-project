@@ -1,12 +1,14 @@
-package com.example._9.midterm.project.ticketing.service;
+package com.example._9.midterm.project.service;
 
 import com.example._9.midterm.project.dto.OrganizerDTO;
 import com.example._9.midterm.project.entity.Organizer;
 import com.example._9.midterm.project.repository.OrganizerRepository;
-import com.yourgroup.ticketing.exception.BadRequestException;
+import com.example._9.midterm.project.exception.BadRequestException;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 
 @Service
 @RequiredArgsConstructor
@@ -14,10 +16,11 @@ public class OrganizerService {
 
     private final OrganizerRepository organizerRepository;
 
-    // ✅ CREATE ORGANIZER
+    // CREATE ORGANIZER
+    @Transactional
     public OrganizerDTO createOrganizer(Organizer organizer) {
 
-        // 🔥 VALIDATION: email must be unique
+        // EMAIL MUST BE UNIQUE BEFORE CREATING
         if (organizerRepository.existsByEmail(organizer.getEmail())) {
             throw new BadRequestException("Email already exists.");
         }
@@ -27,7 +30,7 @@ public class OrganizerService {
         return mapToDTO(saved);
     }
 
-    // 🔁 ENTITY → DTO
+    // CONVERT TO DTO
     private OrganizerDTO mapToDTO(Organizer organizer) {
         return new OrganizerDTO(
                 organizer.getOrganizerId(),

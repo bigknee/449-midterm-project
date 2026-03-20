@@ -10,7 +10,7 @@ import lombok.Data;
 public class Venue {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long venue_id;
+    private Long venueId;
 
     @Column(nullable = false)
     private String name;

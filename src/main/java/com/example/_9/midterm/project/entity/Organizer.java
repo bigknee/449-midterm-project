@@ -9,7 +9,7 @@ import lombok.Data;
 public class Organizer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long organizer_id;
+    private Long organizerId;
 
     @Column(nullable = false)
     private String name;

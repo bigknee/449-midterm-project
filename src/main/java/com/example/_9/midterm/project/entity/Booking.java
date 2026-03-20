@@ -11,17 +11,17 @@ import java.time.LocalDateTime;
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long booking_id;
+    private Long bookingId;
 
     @Column(unique = true)
-    private String booking_reference;
+    private String bookingReference;
 
     @Column(nullable = false)
-    private LocalDateTime booking_date;
+    private LocalDateTime bookingDate;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private PaymentStatus payment_status;
+    private PaymentStatus paymentStatus;
 
     @ManyToOne
     @JoinColumn(name = "attendee_id", nullable = false)

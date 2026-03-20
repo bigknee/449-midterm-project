@@ -11,13 +11,13 @@ import java.time.LocalDateTime;
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long event_id;
+    private Long eventId;
 
     @Column(nullable = false)
     private String title;
 
     private String description;
-    private LocalDateTime event_date;
+    private LocalDateTime eventDate;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
