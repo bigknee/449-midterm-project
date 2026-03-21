@@ -1,30 +1,44 @@
-package com.example._9.midterm.project.controller;
+package com.example._9.midterm.project.service;
 
 import com.example._9.midterm.project.dto.TicketTypeDTO;
-import com.example._9.midterm.project.service.TicketTypeService;
+import com.example._9.midterm.project.entity.Event;
+import com.example._9.midterm.project.entity.TicketType;
+import com.example._9.midterm.project.exception.ResourceNotFoundException;
+import com.example._9.midterm.project.repository.EventRepository;
+import com.example._9.midterm.project.repository.TicketTypeRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 
-@RestController
-@RequestMapping("/api/ticket-types")
+@Service
 @RequiredArgsConstructor
-public class TicketTypeController {
+public class TicketTypeService {
 
-    private final TicketTypeService ticketTypeService;
+    private final TicketTypeRepository ticketTypeRepository;
+    private final EventRepository eventRepository;
 
-    @PostMapping
-    public ResponseEntity<TicketTypeDTO> createTicketType(
-            @RequestParam Long eventId,
-            @RequestParam String name,
-            @RequestParam BigDecimal price,
-            @RequestParam Integer quantityAvailable) {
+    @Transactional
+    public TicketTypeDTO createTicketType(Long eventId, String name,
+                                          BigDecimal price,
+                                          Integer quantityAvailable) {
+        Event event = eventRepository.findById(eventId)
+                .orElseThrow(() -> new ResourceNotFoundException("Event not found"));
 
-        TicketTypeDTO created = ticketTypeService.createTicketType(
-                eventId, name, price, quantityAvailable);
-        return ResponseEntity.status(HttpStatus.CREATED).body(created);
+        TicketType tt = new TicketType();
+        tt.setEvent(event);
+        tt.setName(name);
+        tt.setPrice(price);
+        tt.setQuantityAvailable(quantityAvailable);
+
+        TicketType saved = ticketTypeRepository.save(tt);
+
+        TicketTypeDTO dto = new TicketTypeDTO();
+        dto.setTicketTypeId(saved.getTicketTypeId());
+        dto.setName(saved.getName());
+        dto.setPrice(saved.getPrice());
+        dto.setQuantityAvailable(saved.getQuantityAvailable());
+        return dto;
     }
 }
