@@ -1,4 +1,4 @@
-Team Info: 
+*** Team Info: ***
 Joshua Andrada - 
 Britney Cheng - 886210228
 Karl Orquita - 842282873
