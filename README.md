@@ -1,5 +1,6 @@
 **Brief Overview**
 This is a Spring Boot REST API for an event ticketing system. It manages the full lifecycle of events — from organizers and venues, to ticket types, attendee bookings, and revenue tracking. The backend connects to a PostgreSQL database and follows a standard layered architecture (controllers, services, repositories) with Lombok and DTOs keeping the code clean. The main business logic revolves around creating events, booking tickets, cancelling bookings, and calculating per-event revenue.
+
 **Team Info:**
 Joshua Andrada - 861131696
 Britney Cheng - 886210228
