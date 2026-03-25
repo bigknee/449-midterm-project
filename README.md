@@ -3,6 +3,9 @@ Joshua Andrada - 861131696
 Britney Cheng - 886210228
 Karl Orquita - 842282873
 
+**Video Run Through**
+https://youtu.be/zKpOe3Eqqdg
+
 <img width="1707" height="833" alt="image" src="https://github.com/user-attachments/assets/697bc533-964a-47bb-a171-10eeb5267596" />
 <img width="1094" height="745" alt="image" src="https://github.com/user-attachments/assets/a90de6fb-e2c5-4dce-ab85-413d7f3c530f" />
 <img width="1713" height="989" alt="image" src="https://github.com/user-attachments/assets/f23fd6f4-f438-4e5d-8017-9da1b8680b71" />
